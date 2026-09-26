@@ -1,0 +1,19 @@
+# Cloudflare Worker 名称，与控制台中的 nav 保持一致。
+name = "nav"
+account_id = "0aa3633646e764c7d8b5e5ba5b15dcdd"
+
+# Worker 入口；本项目通过代码生成网页，无需设置静态资源目录。
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# 代码通过 env.NAV_DB 访问已有的 book 数据库。
+[[d1_databases]]
+binding = "NAV_DB"
+database_name = "book"
+database_id = "c479f4c0-3ba1-44cd-a144-ffdc551cf4eb"
+
+# 代码通过 env.NAV_AUTH 访问管理员凭据、会话和缓存版本。
+# 这里只保存资源 ID；密码和 API Token 不应写入本文件。
+[[kv_namespaces]]
+binding = "NAV_AUTH"
+id = "86e70aeba70b494a8cc40077cf7902f9"
