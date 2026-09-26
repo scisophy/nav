@@ -17,3 +17,9 @@ database_id = "c479f4c0-3ba1-44cd-a144-ffdc551cf4eb"
 [[kv_namespaces]]
 binding = "NAV_AUTH"
 id = "86e70aeba70b494a8cc40077cf7902f9"
+
+# 后台把 CSS 内容作为响应文本返回，因此必须按文本模块导入。
+[[rules]]
+type = "Text"
+globs = ["**/*.css"]
+fallthrough = true
